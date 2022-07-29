@@ -3,9 +3,8 @@
 Console.WriteLine("Hello World!");
 LinkedList list = new LinkedList();
 
-list.AddAtEnd(56);
-list.AddAtEnd(30);
-list.AddAtEnd(70);
+list.AddAll(56, 70);
+list.InsertAtParticularPosition(2, 30);
 
 Console.WriteLine("Elements in LinkedList are : ");
 list.Display();

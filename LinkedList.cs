@@ -50,8 +50,8 @@ namespace DataStructuresDemo
             }
         }
         // 3 15
-        internal Node InsertAtParticularPosition(int position, int data)
-        {
+         internal Node InsertAtParticularPosition(int position, int data)
+         {
             if (position < 1)
                 Console.WriteLine("Invalid position");
             if (position == 1)
@@ -65,22 +65,22 @@ namespace DataStructuresDemo
                 Node temp = this.head;
                 while (position != 0) //
                 {
-
-                    if (position == 1)
+                    if (position >= 1)
                     {
                         Node node = new Node(data);
                         node.next = this.head.next;
                         head.next = node;
                         break;
-                    }
-                    temp = temp.next;//1000
+                    } 
+                    temp = temp.next;//1000                  
                 }
                 if (position != 1)
                     Console.WriteLine("Position out of range");
             }
             return head;
-        }
+        } 
 
+        
         internal Node RemoveFirstNode()
         {
             if (this.head == null)
