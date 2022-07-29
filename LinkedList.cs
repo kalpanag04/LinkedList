@@ -89,7 +89,7 @@ namespace DataStructuresDemo
             return this.head;
         }
 
-        internal Node RemovaLastNode()
+        internal Node RemoveLastNode()
         {
             if (head == null)
                 return null;
