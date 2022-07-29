@@ -7,7 +7,7 @@ list.AddAtEnd(56);
 list.AddAtEnd(30);
 list.AddAtEnd(70);
 
-list.RemoveFirstNode();
+list.RemoveLastNode();
 
 Console.WriteLine("Elements in LinkedList are : ");
 list.Display();
