@@ -2,12 +2,7 @@
 
 Console.WriteLine("Hello World!");
 LinkedList list = new LinkedList();
+list.AddAll(56, 30, 70);
+list.Search(30);
 
-list.AddAtEnd(56);
-list.AddAtEnd(30);
-list.AddAtEnd(70);
 
-list.RemoveLastNode();
-
-Console.WriteLine("Elements in LinkedList are : ");
-list.Display();

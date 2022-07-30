@@ -30,9 +30,16 @@ namespace DataStructuresDemo
         {
             Node node = new Node(data);
 
-            node.next = head;
-            head = node;
-            Console.WriteLine("{0} inserted into the linked list", node.data);
+            if (head == null)
+            {
+                head = node;
+            }
+            else
+            {
+                node.next = head;
+                head = node;
+                Console.WriteLine("{0} inserted into the linked list", node.data);
+           }
         }
 
         internal void Display()
@@ -50,8 +57,8 @@ namespace DataStructuresDemo
             }
         }
         // 3 15
-         internal Node InsertAtParticularPosition(int position, int data)
-         {
+        internal Node InsertAtParticularPosition(int position, int data)
+        {
             if (position < 1)
                 Console.WriteLine("Invalid position");
             if (position == 1)
@@ -65,22 +72,23 @@ namespace DataStructuresDemo
                 Node temp = this.head;
                 while (position != 0) //
                 {
+
                     if (position >= 1)
                     {
                         Node node = new Node(data);
                         node.next = this.head.next;
                         head.next = node;
                         break;
-                    } 
-                    temp = temp.next;//1000                  
+                    }
+                    temp = temp.next;//1000
                 }
                 if (position != 1)
                     Console.WriteLine("Position out of range");
             }
             return head;
-        } 
+        }
 
-        
+
         internal Node RemoveFirstNode()
         {
             if (this.head == null)
@@ -104,16 +112,18 @@ namespace DataStructuresDemo
             return head;
         }
 
-        internal Node Search(int value)
+        internal Node Search(int data)
         {
             while (this.head != null)
-            {
-                if (this.head.data == value)
+            {              
+                if (this.head.data == data)
                 {
+                    Console.WriteLine(data+ " is present in the list.");
                     return this.head;
                 }
                 this.head = this.head.next;
             }
+            Console.WriteLine(data+" is not Present in the list ");
             return null;
         }
         internal void AddAll(params int[] arr)
@@ -130,6 +140,7 @@ namespace DataStructuresDemo
                 return;
             else
             {
+                Console.WriteLine("Elements in the list after sorting :");
                 int store;
                 Node temp = head;
                 Node temp1 = null;
@@ -137,7 +148,7 @@ namespace DataStructuresDemo
                 {
                     temp1 = temp.next;
                     while (temp1 != null)
-                    {
+                    {                       
                         if (temp.data.CompareTo(temp1.data) > 0)
                         {
                             store = temp.data;
@@ -149,9 +160,6 @@ namespace DataStructuresDemo
                     temp = temp.next;
                 }
             }
-
-
         }
-
     }
 }
